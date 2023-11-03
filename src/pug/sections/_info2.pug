@@ -1,0 +1,16 @@
+.info.info-nomargin
+	img.info__bg(src="img/background-2.webp", alt="@")
+	.desktop
+		figure.info__fotobox.info__fotobox--translate 
+			img.info__foto(src="img/manager-2.webp", alt="@")
+			figcaption.info__workname.info__workname--translate #[b Евгения] #[br] Менеджер
+	.container 
+		.info__content 
+			h4.title.info__title Остались #[span.color-blue вопросы] 
+			p.tagtitle.info__tagtitle Оставьте свои контакты и мы свяжемся #[br] с вами в ближайшее время
+			ul.info__list 
+				each item in ['получите точные и профессиональные ответы на ваши вопросы','решения, созданные специально для вас и вашей ситуации','мы всегда готовы помочь, когда вам нужно','ваши вопросы и данные остаются строго конфиденциальными','эффективные и оперативные ответы на ваши вопросы']
+					li.info__item
+						img.info__icon(src="img/icon-checkmark.svg", alt="@")
+						span.info__text= item
+			button.button.info__button(data-fancybox="form4" data-src="#form") Оформить кредит

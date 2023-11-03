@@ -1,0 +1,56 @@
+.steps{
+
+    margin-bottom: 120px;
+    padding: 60px 0;
+    background: var(--color-6);
+
+    @media(max-width: 992px){
+        margin-bottom: 60px;
+    }
+
+    &__title{
+        margin-bottom: 15px;
+        @media(max-width: 992px){
+            display: none;
+        }
+    }
+
+    &__tagtitle{
+        margin-bottom: 35px;
+    }
+
+}
+
+.step{
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-right: 25px;
+    padding-left: 25px;
+    background: #FFF;
+    border-radius: 8px;
+
+    &__icon{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__title{
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--color-4);
+    }
+
+    &__text{
+        line-height: 20px;
+    }
+
+    &__button{
+        height: 60px;
+        margin-top: 43px;
+    }
+
+}

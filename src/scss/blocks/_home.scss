@@ -1,0 +1,108 @@
+.home{
+
+    position: relative;
+    z-index: 1;
+    margin-bottom: 80px;
+    background: var(--color-3);
+
+    &__title{
+        margin-bottom: 30px;
+        font-size: 45px;
+        line-height: normal;
+        font-weight: 600;
+        color: var(--color-4);
+        @media(max-width: 992px){
+            font-size: 28px;
+            text-align: center;
+        }
+    }
+
+    &__content{
+        padding-top: 190px;
+        padding-bottom: 85px;
+        @media(max-width: 992px){
+            padding-top: 103px;
+            padding-bottom: 40px;
+        }
+    }
+
+    &__button{
+        max-width: 300px;
+        @media(max-width: 992px){
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__box{
+        position: relative;
+    }
+
+    &-images{
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 50%;
+	    transform: translateX(-18px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 735px;
+        height: 100%;
+        border-radius: 60px 0 0 60px;
+        overflow: hidden;
+        @media(max-width: 992px){
+            display: none;
+        }
+        &__bg{
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &__foto{
+            margin-top: auto;
+        }
+    }
+
+}
+
+.conditions{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 40px;
+    max-width: 490px;
+    width: 100%;
+    margin-bottom: 60px;
+
+    @media(max-width: 992px){
+        grid-template-columns: 1fr;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__item{
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        @media(max-width: 992px){
+            text-align: center;
+        }
+    }
+
+    &__name{
+        font-weight: 400;
+        color: var(--color-5);
+    }
+
+    &__val{
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+}

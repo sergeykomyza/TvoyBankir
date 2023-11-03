@@ -1,0 +1,18 @@
+-
+    const services = [
+        {icon: 'icon-1.svg', title: 'Общество с ограниченной ответственностью', text: 'Пополнение оборотных средств,  покупка оборудования, на выплату налогов и заработной платы и пр.'},
+        {icon: 'icon-2.svg', title: 'Индивидуальный предприниматель',           text: 'Для расширения бизнеса, инвестиций в производство и продвижение бренда, что помогает привлечь новых клиентов'}
+    ]
+
+section.services 
+    .container
+        h2.title.services__title Мы сможем помочь #[span.color-blue в короткие сроки] 
+        .services__box
+            each item in services 
+                .card.services__card
+                    img.card__logo(src="img/logo-decor.svg", alt="@") 
+                    .card__iconbox
+                        img.card__icon(src="img/"+item.icon, alt="@")
+                    .card__title.card__title--service= item.title 
+                    p.card__text= item.text
+

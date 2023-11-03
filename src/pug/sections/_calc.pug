@@ -1,0 +1,49 @@
+section.calculate 
+    .container 
+        h2.title.calculate__title Рассчитать свой #[span.color-blue кредит]
+        .calculate__box 
+            
+            .calculate__fields 
+                .calculate__field
+                    label.calculate__label Сумма кредита (в рублях)
+                    input.calculate__input.js-inputSum(type="text" value="1000000")
+                    input.calculate__input.js-inputSumDouble(type="text" value="1000000" style="display:none")
+                .calculate__field
+                    label.calculate__label Срок кредита (в годах)
+                    input.calculate__input.js-inputTime(type="text" value="1")
+                .calculate__field
+                    label.calculate__label Годовая ставка (в процентах)
+                    input.calculate__input.js-inputPercent(readonly type="text" value="5.3")
+            
+            .calculate__fields
+                .calculate__buttons.js-btnWrap
+                    each item in ['1','3','5']
+                        button.calculate__btn.js-dataBtn.js-dataSum
+                            span.js-dataValue= item 
+                            span &nbsp; млн. ₽
+                .calculate__buttons.js-btnWrap 
+                    each item in ['1','5','7','10','20']
+                        button.calculate__btn.js-dataBtn.js-dataTime
+                            span.js-dataValue= item 
+                            if(item === '1')
+                                span &nbsp; год
+                            else 
+                                span &nbsp; лет
+                .calculate__buttons.js-btnWrap
+                    each item in ['5.3','7.5','8','9.5','11','13']
+                        button.calculate__btn.js-dataBtn.js-dataPercent
+                            span.js-dataValue= item 
+                            span &nbsp; %
+
+            .result
+                .result__item 
+                    span.result__name Ежемесячный платеж
+                    .result__box.result__box--sum
+                        output.js-resultSum(type="text" value="" readonly) 
+                        span  ₽
+                .result__item
+                    span.result__name Эффективная кредитная ставка
+                    .result__box
+                        output.js-resultPercent  
+                        span  %
+                a.button.result__button(data-fancybox href="#form") Получить кредит

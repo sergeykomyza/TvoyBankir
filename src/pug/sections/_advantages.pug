@@ -1,0 +1,22 @@
+-
+    const advantages = [
+        {title: 'Работа без предоплаты', text: 'Оплата после получения кредита в банке',                     icon: 'icon-3.svg'},
+        {title: 'Низкая ставка',         text: 'Снизим ставку на 0,5−4% и поможем сэкономить на страховке',  icon: 'icon-4.svg'},
+        {title: 'Сложные случаи',        text: 'Вы получите решение даже если банки вам отказали',           icon: 'icon-5.svg'},
+        {title: 'Прозрачные условия',    text: 'Работаем строго по договору, ваши интересы защищены',        icon: 'icon-6.svg'},
+        {title: 'Качественно и быстро',  text: 'Минимальные сроки от обработки заявки до получения кредита', icon: 'icon-7.svg'},
+        {title: 'Персональный менеджер', text: 'С вами всегда на связи ваш личный менеджер',                 icon: 'icon-8.svg'}
+    ]
+
+section.advantages 
+    .container 
+        h5.title.advantages__title Почему мы #[span.color-blue заслуживаем] вашего #[span.color-blue доверия?] 
+        .advantages__box 
+            each item, i in advantages 
+                .card.advantages__card 
+                    .card__iconbox
+                        img.card__icon(src="img/"+item.icon, alt="@")
+                    .card__title.card__title--advantages= item.title
+                    p.card__text= item.text
+                    .card__num 
+                        span= `0${i+1}`

@@ -1,0 +1,194 @@
+.card{
+
+    position: relative;
+    width: 100%;
+    min-height: 210px;
+    padding: 25px;
+    background: var(--color-3);
+    border-radius: 8px;
+
+    &__title{
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    &__text{
+        line-height: 20px;
+    }
+
+    &__iconbox{
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        background: var(--color-1);
+        box-shadow: 0px 0px 10px 0px rgba(73, 113, 255, 0.60);
+        @media(max-width: 992px){
+            position: static;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__num{
+        position: absolute;
+        right: 25px;
+        bottom: 25px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--color-1);
+        @media(max-width: 992px){
+            bottom: initial;
+            top: 25px;
+        }
+    }
+
+    &__logo{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__dot{
+        width: 6px;
+        height: 6px;
+        margin-bottom: 25px;
+        border-radius: 50%;
+        background: var(--color-1);
+    }
+}
+
+.modal{
+    display: none;
+    max-width: 360px;
+    width: 100%;
+    padding: 30px;
+    background: #FFF;
+    border-radius: 8px;
+
+    &__icon{
+        margin-bottom: 22px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    &__title{
+        margin-bottom: 5px;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        &--big{
+            font-size: 28px;
+        }
+    }
+    
+    &__tagtitle{
+        text-align: center;
+    }
+
+    &__button{
+        margin-top: 30px;
+    }
+}
+
+.form{
+    
+    &__field{
+        position: relative;
+        margin-top: 40px;
+    }
+    
+    &__label{
+        position: absolute;
+        top: 0;
+        left: 10px;
+        font-weight: 400;
+        color: var(--color-5);
+        pointer-events: none;
+        transition: all .3s;
+    }
+    
+    &__input{
+        width: 100%;
+        padding-bottom: 18px;
+        padding-left: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        border-bottom: 1px solid var(--color-5);
+        &::placeholder{
+            color: transparent;
+        }
+        &:focus{
+            outline: none !important;
+        }
+        &:focus + .form__label{
+            top: -25px;
+        }
+        &:not(:placeholder-shown) + .form__label{
+            top: -25px;
+        }
+    }
+    
+
+    &__button{
+        margin-top: 25px;
+    }
+
+}
+
+.agree{
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+	&__wrap{
+		display: flex;
+	}
+	&__checkbox{
+		position: relative;
+		flex-shrink: 0;
+		display: block;
+		width: 9px;
+		height: 9px;
+		margin: 3px 3px 0 0;
+		border-radius: 50%;
+		border: 1px solid var(--color-1);
+	}
+	&__text{
+		font-size: 10px;
+		font-weight: 500;
+		line-height: 14px;
+		a{
+			color: var(--color-1);
+			text-decoration: underline;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+	&__input{
+		display: none;
+		&:checked + .agree__checkbox:after{
+			content: '';
+			position: absolute;
+			top: 1px;
+			left: 1px;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background: var(--color-1);
+		}
+	}
+} 
+
+.fancybox__content>.carousel__button.is-close{
+    top: 0;
+    svg{
+        stroke: var(--color-1);
+    }
+}

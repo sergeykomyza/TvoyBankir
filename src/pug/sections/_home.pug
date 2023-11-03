@@ -1,0 +1,24 @@
+-
+    const conditions = [
+        {name: 'Сумма кредита',           val: 'до 100 млн. ₽'},
+        {name: 'Предварительное решение', val: 'за 1 рабочий день'},
+        {name: 'Мы сотрудничаем',         val: 'с 60 банками'},
+        {name: 'Процент одобрения',       val: '99%'}
+    ]
+
+.home
+    .home-images
+        img.home-images__bg(src="img/home-bg.jpg", alt="@")
+        img.home-images__foto(src="img/business-woman.png", alt="@")
+    .container 
+        .home__content 
+            h1.title.home__title Помогаем  #[span.color-blue быстро] #[br] и #[span.color-blue просто] получить кредит #[br] #[span.color-blue на выгодных условиях]
+            .conditions 
+                each item in conditions 
+                    .conditions__item
+                        span.conditions__name= item.name 
+                        if(item.val === 'до 100 млн. ₽' || item.val === '99%')
+                            p.conditions__val.color-red= item.val
+                        if(item.val === 'за 1 рабочий день' || item.val === 'с 60 банками')
+                            p.conditions__val.color-blue= item.val
+            button.button.home__button(data-fancybox="form1" data-src="#form") Подобрать кредит

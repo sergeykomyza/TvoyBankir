@@ -1,0 +1,22 @@
+-
+    const steps = [
+        {title: 'Встреча и обсуждение', text: 'Встреча с персональным менеджером, подписание договора на согласованных условиях'},
+        {title: 'Поиск решения', text: 'Подробный анализ вашей ситуации командой высококлассных аналитиков, которые найдут наиболее оптимальное решение для вас'},
+        {title: 'Подбор предложений', text: 'Получение одобрений и выбор наилучших предложений от банков для вас'},
+        {title: 'Получение кредита', text: 'Вы получаете максимально выгодный для вас кредит и только потом оплачиваете услуги согласно условиям'}
+    ]
+
+section.steps 
+    .container 
+        h6.title.steps__title Сопровождаем на всех #[span.color-blue этапах] #[br] получения  #[span.color-blue кредита] 
+        p.tagtitle.steps__tagtitle Специалисты нашей компании проводят полный цикл сделки #[br] от формирования заявки до получения денежных средств
+        .steps__box.js-sliderSteps 
+            .swiper-wrapper 
+                each item, i in steps 
+                    .step.swiper-slide
+                        img.step__icon(src="img/icon-bookmark.svg", alt="@") 
+                        .step__title= item.title 
+                        p.step__text= item.text 
+                        if(i === 0)
+                            button.button.step__button(data-fancybox="form3" data-src="#form") Оставить заявку 
+            .swiper-pagination       

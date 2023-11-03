@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>TvoyBankir</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container"> 
+        <div class="header__box"> 
+          <figure class="logo"> <img class="logo__icon" src="./img/logo.svg" alt="@"/>
+            <figcaption class="logo__text desktop">Помогаем взять кредит <br/> для ООО и ИП</figcaption>
+          </figure>
+          <div class="desktop">
+            <div class="social"> <span class="social__text">Задайте вопросы <br/> мы онлайн</span>
+              <div class="social__icons"> <a class="social__link" href="#"><img class="social__icon" src="img/telegram.svg" alt="#"/></a><a class="social__link" href="#"><img class="social__icon" src="img/whatsapp.svg" alt="#"/></a></div>
+            </div>
+          </div>
+          <div class="desktop">
+            <div class="header-contact"><span class="header-contact__name">Электронная почта</span><a class="header-contact__val" href="mailto:info@tvoybankir.ru">info@tvoybankir.ru</a></div>
+          </div>
+          <div class="desktop">
+            <div class="header-contact"> <span class="header-contact__name">Звоните Пн-Пт: 09:00 - 19:00</span><a class="header-contact__val header-contact__val--phone" href="tel:+78005509579">+7 (800) 550-95-79 </a></div>
+          </div>
+          <button class="header__button" data-fancybox="form" data-src="#form">Оставить заявку</button>
+        </div>
+      </div>
+    </header>
+    <div class="modal" id="form"> 
+      <div class="modal__title">Заполните форму</div>
+      <p class="modal__tagtitle">и мы свяжемся с вами <b>в течении 5 минут</b> в рабочее время</p>
+      <form class="form" action="#">
+        <div class="form__field"> 
+          <input class="form__input" type="text" placeholder="Как вас зовут?"/><span class="form__label">Как вас зовут?</span>
+        </div>
+        <div class="form__field"> 
+          <input class="form__input js-maskPhone" type="text" placeholder="Ваш номер телефона"/><span class="form__label">Ваш номер телефона</span>
+        </div>
+        <button class="button form__button" data-fancybox="thanks" data-src="#thanks">Подобрать кредит</button>
+        <div class="agree">
+          <label class="agree__wrap">
+            <input class="agree__input" type="checkbox" checked="checked" autocomplete="off"/><span class="agree__checkbox"></span><span class="agree__text">Нажимая на кнопку, вы соглашаетесь с <br/> <a href="">политикой конфиденциальности </a></span>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div class="modal" id="thanks"> 
+      <svg class="modal__icon" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+        <path d="M53.8125 11.5078C46.6172 12.4453 38.7422 15.3984 32.8828 19.3594C21.2578 27.2109 13.5938 39.3984 11.625 53.1328C11.2031 56.1562 11.1328 62.8359 11.4844 65.8594C13.2422 79.9922 20.9766 92.6016 32.8828 100.641C38.8828 104.695 46.6641 107.578 54.1406 108.492C56.6953 108.82 63.3047 108.82 65.8594 108.492C74.3906 107.438 82.5938 104.133 89.4844 98.9766C91.7344 97.2656 95.6719 93.4922 97.6406 91.1484C103.547 84.0703 107.438 74.9297 108.539 65.5312C108.938 62.1328 108.703 54.4688 108.07 51.1875C107.484 48.0938 106.547 44.7188 106.031 43.9453C104.719 41.9531 101.625 41.7656 99.9844 43.5938C98.7891 44.9297 98.7422 45.7266 99.7031 49.4531C100.852 53.9297 101.109 56.4375 100.945 61.4766C100.805 66.2344 100.359 68.7656 99 72.8906C96.8438 79.3828 93.2812 84.9375 88.1719 89.7891C81.2109 96.3984 72.0234 100.453 62.7422 100.969C55.0312 101.414 48.3516 100.055 41.6016 96.6797C39.9375 95.8359 37.5469 94.4297 36.3281 93.5625C33.4688 91.5469 28.4531 86.5312 26.4375 83.6719C23.3672 79.3359 20.8594 73.5234 19.6406 67.9688C19.1719 65.7891 19.125 64.8516 19.125 60C19.125 55.1484 19.1719 54.2109 19.6406 52.0312C20.8594 46.4766 23.3672 40.6641 26.4375 36.3281C28.4531 33.4688 33.4688 28.4531 36.3281 26.4375C39.1172 24.4688 43.8984 22.0547 47.1094 21C58.9688 17.0859 71.9062 18.7734 82.4062 25.5703C84.5391 26.9531 84.7969 27.0703 86.0625 27.0703C87.5625 27.0703 88.3359 26.625 89.25 25.3125C89.6016 24.7734 89.7656 24.1875 89.7656 23.3906C89.7656 21.6094 89.2266 20.7422 87.3281 19.4766C81.0938 15.2812 73.9922 12.5859 66.5859 11.6016C63.8438 11.2266 56.4141 11.1797 53.8125 11.5078Z" fill="#4971FF"></path>
+        <path d="M103.195 16.5703C102.727 16.8047 95.1562 25.6875 81.2812 42.3281C69.6562 56.2734 60.0703 67.7109 59.9999 67.7109C59.9296 67.7109 56.039 63.0938 51.3281 57.4688C46.6171 51.8438 42.4218 46.9922 41.9765 46.7109C40.4062 45.6562 37.9453 46.1719 36.8671 47.7891C36.1171 48.8906 35.9531 50.0625 36.3515 51.2109C36.7968 52.4531 57.1406 76.7109 58.1718 77.25C59.1093 77.7422 60.8906 77.7422 61.8281 77.25C62.2968 77.0156 70.8984 66.8906 85.1953 49.7812C97.664 34.875 108.047 22.3594 108.305 21.9375C108.891 20.9766 108.891 19.125 108.305 18.0469C107.437 16.4062 104.977 15.7031 103.195 16.5703Z" fill="#4971FF"></path>
+      </svg>
+      <div class="modal__title modal__title--big">Спасибо!!!</div>
+      <div class="modal__tagtitle">Ваш запрос обрабатывается, мы перезвоним вам в ближайшее время</div>
+      <button class="button modal__button">Спасибо</button>
+    </div>
+    <div class="home">
+      <div class="home-images"><img class="home-images__bg" src="img/home-bg.jpg" alt="@"/><img class="home-images__foto" src="img/business-woman.png" alt="@"/></div>
+      <div class="container"> 
+        <div class="home__content"> 
+          <h1 class="title home__title">Помогаем  <span class="color-blue">быстро</span> <br/> и <span class="color-blue">просто</span> получить кредит <br/> <span class="color-blue">на выгодных условиях</span></h1>
+          <div class="conditions"> 
+            <div class="conditions__item"><span class="conditions__name">Сумма кредита</span>
+              <p class="conditions__val color-red">до 100 млн. ₽</p>
+            </div>
+            <div class="conditions__item"><span class="conditions__name">Предварительное решение</span>
+              <p class="conditions__val color-blue">за 1 рабочий день</p>
+            </div>
+            <div class="conditions__item"><span class="conditions__name">Мы сотрудничаем</span>
+              <p class="conditions__val color-blue">с 60 банками</p>
+            </div>
+            <div class="conditions__item"><span class="conditions__name">Процент одобрения</span>
+              <p class="conditions__val color-red">99%</p>
+            </div>
+          </div>
+          <button class="button home__button" data-fancybox="form1" data-src="#form">Подобрать кредит</button>
+        </div>
+      </div>
+    </div>
+    <section class="services"> 
+      <div class="container">
+        <h2 class="title services__title">Мы сможем помочь <span class="color-blue">в короткие сроки</span> </h2>
+        <div class="services__box">
+          <div class="card services__card"><img class="card__logo" src="img/logo-decor.svg" alt="@"/>
+            <div class="card__iconbox"><img class="card__icon" src="img/icon-1.svg" alt="@"/></div>
+            <div class="card__title card__title--service">Общество с ограниченной ответственностью</div>
+            <p class="card__text">Пополнение оборотных средств,  покупка оборудования, на выплату налогов и заработной платы и пр.</p>
+          </div>
+          <div class="card services__card"><img class="card__logo" src="img/logo-decor.svg" alt="@"/>
+            <div class="card__iconbox"><img class="card__icon" src="img/icon-2.svg" alt="@"/></div>
+            <div class="card__title card__title--service">Индивидуальный предприниматель</div>
+            <p class="card__text">Для расширения бизнеса, инвестиций в производство и продвижение бренда, что помогает привлечь новых клиентов</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="calculate"> 
+      <div class="container"> 
+        <h2 class="title calculate__title">Рассчитать свой <span class="color-blue">кредит</span></h2>
+        <div class="calculate__box"> 
+          <div class="calculate__fields"> 
+            <div class="calculate__field">
+              <label class="calculate__label">Сумма кредита (в рублях)</label>
+              <input class="calculate__input js-inputSum" type="text" value="1000000"/>
+              <input class="calculate__input js-inputSumDouble" type="text" value="1000000" style="display:none"/>
+            </div>
+            <div class="calculate__field">
+              <label class="calculate__label">Срок кредита (в годах)</label>
+              <input class="calculate__input js-inputTime" type="text" value="1"/>
+            </div>
+            <div class="calculate__field">
+              <label class="calculate__label">Годовая ставка (в процентах)</label>
+              <input class="calculate__input js-inputPercent" readonly="readonly" type="text" value="5.3"/>
+            </div>
+          </div>
+          <div class="calculate__fields">
+            <div class="calculate__buttons js-btnWrap">
+              <button class="calculate__btn js-dataBtn js-dataSum"><span class="js-dataValue">1</span><span>&nbsp; млн. ₽</span></button>
+              <button class="calculate__btn js-dataBtn js-dataSum"><span class="js-dataValue">3</span><span>&nbsp; млн. ₽</span></button>
+              <button class="calculate__btn js-dataBtn js-dataSum"><span class="js-dataValue">5</span><span>&nbsp; млн. ₽</span></button>
+            </div>
+            <div class="calculate__buttons js-btnWrap"> 
+              <button class="calculate__btn js-dataBtn js-dataTime"><span class="js-dataValue">1</span><span>&nbsp; год</span>
+              </button>
+              <button class="calculate__btn js-dataBtn js-dataTime"><span class="js-dataValue">5</span><span>&nbsp; лет</span>
+              </button>
+              <button class="calculate__btn js-dataBtn js-dataTime"><span class="js-dataValue">7</span><span>&nbsp; лет</span>
+              </button>
+              <button class="calculate__btn js-dataBtn js-dataTime"><span class="js-dataValue">10</span><span>&nbsp; лет</span>
+              </button>
+              <button class="calculate__btn js-dataBtn js-dataTime"><span class="js-dataValue">20</span><span>&nbsp; лет</span>
+              </button>
+            </div>
+            <div class="calculate__buttons js-btnWrap">
+              <button class="calculate__btn js-dataBtn js-dataPercent"><span class="js-dataValue">5.3</span><span>&nbsp; %</span></button>
+              <button class="calculate__btn js-dataBtn js-dataPercent"><span class="js-dataValue">7.5</span><span>&nbsp; %</span></button>
+              <button class="calculate__btn js-dataBtn js-dataPercent"><span class="js-dataValue">8</span><span>&nbsp; %</span></button>
+              <button class="calculate__btn js-dataBtn js-dataPercent"><span class="js-dataValue">9.5</span><span>&nbsp; %</span></button>
+              <button class="calculate__btn js-dataBtn js-dataPercent"><span class="js-dataValue">11</span><span>&nbsp; %</span></button>
+              <button class="calculate__btn js-dataBtn js-dataPercent"><span class="js-dataValue">13</span><span>&nbsp; %</span></button>
+            </div>
+          </div>
+          <div class="result">
+            <div class="result__item"> <span class="result__name">Ежемесячный платеж</span>
+              <div class="result__box result__box--sum">
+                <output class="js-resultSum" type="text" value="" readonly="readonly"> </output><span> ₽</span>
+              </div>
+            </div>
+            <div class="result__item"><span class="result__name">Эффективная кредитная ставка</span>
+              <div class="result__box">
+                <output class="js-resultPercent"> </output><span> %</span>
+              </div>
+            </div><a class="button result__button" data-fancybox="data-fancybox" href="#form">Получить кредит</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="info"><img class="info__bg" src="img/background-1.webp" alt="@"/>
+      <div class="desktop">
+        <figure class="info__fotobox"> <img class="info__foto" src="img/manager-1.webp" alt="@"/>
+          <figcaption class="info__workname"><b>Анастасия</b> <br/> Менеджер</figcaption>
+        </figure>
+      </div>
+      <div class="container"> 
+        <div class="info__content"> 
+          <h4 class="title info__title">Получи <span class="color-blue">кредит</span> при помощи кредитного брокера <br class="desktop"/> <span class="color-blue">с любой кредитной историей</span></h4>
+          <ul class="info__list"> 
+            <li class="info__item"><img class="info__icon" src="img/icon-idea.svg" alt="@"/><span class="info__text">станем вашим надежным помощником в получении кредита на лучших условиях, даже при сложной кредитной истории</span></li>
+            <li class="info__item"><img class="info__icon" src="img/icon-idea.svg" alt="@"/><span class="info__text">сотрудничаем более чем с 60 банками и финансовыми организациями</span></li>
+            <li class="info__item"><img class="info__icon" src="img/icon-idea.svg" alt="@"/><span class="info__text">обращайтесь к нам и ваш кредит будет одобрен на лучших условиях</span></li>
+          </ul>
+          <button class="button info__button" data-fancybox="form2" data-src="#form">Оформить кредит</button>
+        </div>
+      </div>
+    </div>
+    <section class="advantages"> 
+      <div class="container"> 
+        <h5 class="title advantages__title">Почему мы <span class="color-blue">заслуживаем</span> вашего <span class="color-blue">доверия?</span> </h5>
+        <div class="advantages__box"> 
+          <div class="card advantages__card"> 
+            <div class="card__iconbox"><img class="card__icon" src="img/icon-3.svg" alt="@"/></div>
+            <div class="card__title card__title--advantages">Работа без предоплаты</div>
+            <p class="card__text">Оплата после получения кредита в банке</p>
+            <div class="card__num"> <span>01</span></div>
+          </div>
+          <div class="card advantages__card"> 
+            <div class="card__iconbox"><img class="card__icon" src="img/icon-4.svg" alt="@"/></div>
+            <div class="card__title card__title--advantages">Низкая ставка</div>
+            <p class="card__text">Снизим ставку на 0,5−4% и поможем сэкономить на страховке</p>
+            <div class="card__num"> <span>02</span></div>
+          </div>
+          <div class="card advantages__card"> 
+            <div class="card__iconbox"><img class="card__icon" src="img/icon-5.svg" alt="@"/></div>
+            <div class="card__title card__title--advantages">Сложные случаи</div>
+            <p class="card__text">Вы получите решение даже если банки вам отказали</p>
+            <div class="card__num"> <span>03</span></div>
+          </div>
+          <div class="card advantages__card"> 
+            <div class="card__iconbox"><img class="card__icon" src="img/icon-6.svg" alt="@"/></div>
+            <div class="card__title card__title--advantages">Прозрачные условия</div>
+            <p class="card__text">Работаем строго по договору, ваши интересы защищены</p>
+            <div class="card__num"> <span>04</span></div>
+          </div>
+          <div class="card advantages__card"> 
+            <div class="card__iconbox"><img class="card__icon" src="img/icon-7.svg" alt="@"/></div>
+            <div class="card__title card__title--advantages">Качественно и быстро</div>
+            <p class="card__text">Минимальные сроки от обработки заявки до получения кредита</p>
+            <div class="card__num"> <span>05</span></div>
+          </div>
+          <div class="card advantages__card"> 
+            <div class="card__iconbox"><img class="card__icon" src="img/icon-8.svg" alt="@"/></div>
+            <div class="card__title card__title--advantages">Персональный менеджер</div>
+            <p class="card__text">С вами всегда на связи ваш личный менеджер</p>
+            <div class="card__num"> <span>06</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="steps"> 
+      <div class="container"> 
+        <h6 class="title steps__title">Сопровождаем на всех <span class="color-blue">этапах</span> <br/> получения  <span class="color-blue">кредита</span> </h6>
+        <p class="tagtitle steps__tagtitle">Специалисты нашей компании проводят полный цикл сделки <br/> от формирования заявки до получения денежных средств</p>
+        <div class="steps__box js-sliderSteps"> 
+          <div class="swiper-wrapper"> 
+            <div class="step swiper-slide"><img class="step__icon" src="img/icon-bookmark.svg" alt="@"/>
+              <div class="step__title">Встреча и обсуждение</div>
+              <p class="step__text">Встреча с персональным менеджером, подписание договора на согласованных условиях</p>
+              <button class="button step__button" data-fancybox="form3" data-src="#form">Оставить заявку </button>
+            </div>
+            <div class="step swiper-slide"><img class="step__icon" src="img/icon-bookmark.svg" alt="@"/>
+              <div class="step__title">Поиск решения</div>
+              <p class="step__text">Подробный анализ вашей ситуации командой высококлассных аналитиков, которые найдут наиболее оптимальное решение для вас</p>
+            </div>
+            <div class="step swiper-slide"><img class="step__icon" src="img/icon-bookmark.svg" alt="@"/>
+              <div class="step__title">Подбор предложений</div>
+              <p class="step__text">Получение одобрений и выбор наилучших предложений от банков для вас</p>
+            </div>
+            <div class="step swiper-slide"><img class="step__icon" src="img/icon-bookmark.svg" alt="@"/>
+              <div class="step__title">Получение кредита</div>
+              <p class="step__text">Вы получаете максимально выгодный для вас кредит и только потом оплачиваете услуги согласно условиям</p>
+            </div>
+          </div>
+          <div class="swiper-pagination">      </div>
+        </div>
+      </div>
+    </section>
+    <section class="reason"> 
+      <div class="container"> 
+        <h6 class="title reason__title">Вам <span class="color-blue">потребуется помощь</span> <br/> кредитного брокера, <span class="color-blue">если...</span></h6>
+        <div class="reason__box"> 
+          <div class="card reason__card reason__card--lg"><img class="card__logo" src="img/logo-decor.svg" alt="@"/>
+            <div class="card__dot"></div>
+            <div class="card__title">Плохая кредитная история</div>
+            <div class="card__text">поможем вам найти выход <br> и восстановить финансовую надежность</div>
+          </div>
+          <div class="card reason__card reason__card--lg"><img class="card__logo" src="img/logo-decor.svg" alt="@"/>
+            <div class="card__dot"></div>
+            <div class="card__title">Имеются просрочки платежей</div>
+            <div class="card__text">поможем вам найти выход <br> и восстановить финансовую надежность</div>
+          </div>
+          <div class="card reason__card reason__card--sm"><img class="card__logo" src="img/logo-decor.svg" alt="@"/>
+            <div class="card__dot"></div>
+            <div class="card__title">Вам отказывают банки</div>
+            <div class="card__text">мы поможем решить ваши <br> финансовые вопросы и получить <br> нужное финансирование</div>
+          </div>
+          <div class="card reason__card reason__card--sm"><img class="card__logo" src="img/logo-decor.svg" alt="@"/>
+            <div class="card__dot"></div>
+            <div class="card__title">Ваш доход ограничен</div>
+            <div class="card__text">Ищем способы увеличить <br> вашу финансовую <br> стабильность и процветание</div>
+          </div>
+          <div class="card reason__card reason__card--sm"><img class="card__logo" src="img/logo-decor.svg" alt="@"/>
+            <div class="card__dot"></div>
+            <div class="card__title">Кредит нужен срочно</div>
+            <div class="card__text">Поможем вам получить <br> финансовую поддержку быстро</div>
+          </div>
+          <div class="card reason__card reason__card--lg"><img class="card__logo" src="img/logo-decor.svg" alt="@"/>
+            <div class="card__dot"></div>
+            <div class="card__title">Изменить условия кредита</div>
+            <div class="card__text">хочется снизить процентную ставку, <br> увеличить срок, отказаться от страховки</div>
+          </div>
+          <div class="card reason__card reason__card--lg"><img class="card__logo" src="img/logo-decor.svg" alt="@"/>
+            <div class="card__dot"></div>
+            <div class="card__title">Оптимизировать ваши траты</div>
+            <div class="card__text">предоставим решения для более выгодных <br> и эффективных кредитных обязательств</div>
+          </div>
+        </div>
+        <p class="reason__text">Если у Вас возникли вышеперечисленные проблемы или любые сложности в оформлении кредита, то опыт нашего кредитного эксперта позволит вам, как заемщику решить эти задачи в разы эффективнее быстрее и выгоднее, чем если бы Вы делали это своими силами.</p>
+      </div>
+    </section>
+    <section class="partners"> 
+      <div class="container"> 
+        <h6 class="title partners__title">Надежные <span class="color-blue">партнеры</span></h6>
+        <div class="swiper partners__box js-sliderPartners"> 
+          <div class="swiper-wrapper"> 
+            <div class="swiper-slide partner"> <img class="partner__logo" src="img/logo-sovkombank.svg" alt="logo"/></div>
+            <div class="swiper-slide partner"> <img class="partner__logo" src="img/logo-pskbank.svg" alt="logo"/></div>
+            <div class="swiper-slide partner"> <img class="partner__logo" src="img/logo-vtbbank.png" alt="logo"/></div>
+            <div class="swiper-slide partner"> <img class="partner__logo" src="img/logo-tinkoffbank.svg" alt="logo"/></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <div class="info info-nomargin"><img class="info__bg" src="img/background-2.webp" alt="@"/>
+      <div class="desktop">
+        <figure class="info__fotobox info__fotobox--translate"> <img class="info__foto" src="img/manager-2.webp" alt="@"/>
+          <figcaption class="info__workname info__workname--translate"><b>Евгения</b> <br/> Менеджер</figcaption>
+        </figure>
+      </div>
+      <div class="container"> 
+        <div class="info__content"> 
+          <h4 class="title info__title">Остались <span class="color-blue">вопросы</span> </h4>
+          <p class="tagtitle info__tagtitle">Оставьте свои контакты и мы свяжемся <br/> с вами в ближайшее время</p>
+          <ul class="info__list"> 
+            <li class="info__item"><img class="info__icon" src="img/icon-checkmark.svg" alt="@"/><span class="info__text">получите точные и профессиональные ответы на ваши вопросы</span></li>
+            <li class="info__item"><img class="info__icon" src="img/icon-checkmark.svg" alt="@"/><span class="info__text">решения, созданные специально для вас и вашей ситуации</span></li>
+            <li class="info__item"><img class="info__icon" src="img/icon-checkmark.svg" alt="@"/><span class="info__text">мы всегда готовы помочь, когда вам нужно</span></li>
+            <li class="info__item"><img class="info__icon" src="img/icon-checkmark.svg" alt="@"/><span class="info__text">ваши вопросы и данные остаются строго конфиденциальными</span></li>
+            <li class="info__item"><img class="info__icon" src="img/icon-checkmark.svg" alt="@"/><span class="info__text">эффективные и оперативные ответы на ваши вопросы</span></li>
+          </ul>
+          <button class="button info__button" data-fancybox="form4" data-src="#form">Оформить кредит</button>
+        </div>
+      </div>
+    </div>
+    <section class="contacts">
+      <div class="contacts__map" id="map"></div>
+      <div class="container"> 
+        <div class="contacts__box">
+          <h6 class="title contacts__title">Контакты</h6>
+          <p class="contacts__tagtitle">Наш офис расположен в БЦ «ЦЕНТР-Т». Вы можете быстро добраться к нам от метро Тульская (3 минуты от метро), либо построить маршрут в навигаторе.</p>
+          <div class="contacts__wrap">
+            <div class="contacts__col">
+              <div class="contacts__item"> <span class="contacts__name">Звоните</span><a class="contacts__value contacts__value--phone" href="tel:+78005509579">+7 (800) 550-95-79</a></div>
+              <div class="contacts__item"> <span class="contacts__name">Пишите</span>
+                <div class="social__icons"> <a class="social__link" href="#"><img class="social__icon" src="img/telegram.svg" alt="#"/></a><a class="social__link" href="#"><img class="social__icon" src="img/whatsapp.svg" alt="#"/></a></div><a class="contacts__value" href="mailto:info@tvoybankir.ru">info@tvoybankir.ru</a>
+              </div>
+              <div class="contacts__item"> <span class="contacts__name">График работы</span><span class="contacts__value"> Пн-Пт: 09:00 - 19:00</span></div>
+            </div>
+            <div class="contacts__col"> 
+              <div class="contacts__item"> <span class="contacts__name">Адрес</span><span class="contacts__adress">г. Москва, Гамсоновский <br/> переулок, д. 2, стр. 1, БЦ <br/> «ЦЕНТР-Т» (м. Тульская)</span></div>
+              <div class="contacts__item"> <span class="contacts__name">До встречи в офисе</span><img class="contacts__foto" src="img/foto-office.png" alt="#"/></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container"> 
+        <div class="footer__box"> 
+          <figure class="logo"><img class="logo__icon" src="/img/logo-footer.svg" alt="@"/>
+            <figcaption class="desktop logo__text logo__text--white">Помогаем взять кредит <br/> для ООО и ИП</figcaption>
+          </figure>
+          <div class="footer__links"> <a class="footer__link" href="#">Пользовательское соглашение</a><a class="footer__link" href="#">Политика конфиденциальности</a></div><a class="footer__dev" href="https://scrum360.ru"><img src="img/footer-logo.png" alt="@"/></a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

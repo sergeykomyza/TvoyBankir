@@ -1,0 +1,15 @@
+.info
+    img.info__bg(src="img/background-1.webp", alt="@")
+    .desktop
+        figure.info__fotobox 
+            img.info__foto(src="img/manager-1.webp", alt="@")
+            figcaption.info__workname #[b Анастасия] #[br] Менеджер
+    .container 
+        .info__content 
+            h4.title.info__title Получи #[span.color-blue кредит] при помощи кредитного брокера #[br.desktop] #[span.color-blue с любой кредитной историей]
+            ul.info__list 
+                each item in ['станем вашим надежным помощником в получении кредита на лучших условиях, даже при сложной кредитной истории','сотрудничаем более чем с 60 банками и финансовыми организациями','обращайтесь к нам и ваш кредит будет одобрен на лучших условиях']
+                    li.info__item
+                        img.info__icon(src="img/icon-idea.svg", alt="@")
+                        span.info__text= item
+            button.button.info__button(data-fancybox="form2" data-src="#form") Оформить кредит

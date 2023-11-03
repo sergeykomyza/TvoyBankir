@@ -1,0 +1,9 @@
+section.partners 
+    .container 
+        h6.title.partners__title Надежные #[span.color-blue партнеры]
+        .swiper.partners__box.js-sliderPartners 
+            .swiper-wrapper 
+                each item in ['logo-sovkombank.svg','logo-pskbank.svg','logo-vtbbank.png','logo-tinkoffbank.svg']
+                    .swiper-slide.partner 
+                        img.partner__logo(src="img/"+item, alt="logo")
+            .swiper-pagination

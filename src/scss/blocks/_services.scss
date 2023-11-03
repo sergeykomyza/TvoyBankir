@@ -1,0 +1,27 @@
+.services{
+
+    margin-bottom: 120px;
+
+    @media(max-width: 992px){
+        margin-bottom: 60px;
+    }
+
+    &__title{
+        margin-bottom: 25px;
+    }
+
+    &__box{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 30px;
+    }
+
+    &__card{
+        padding-right: 213px;
+        @media(max-width: 992px){
+            padding-right: 25px;
+        }
+    }
+
+}
+

@@ -1,0 +1,224 @@
+
+
+/*
+0. Шрифты
+1. Общие стили для всего сайта
+2. Вспомогательные классы
+3. Стили для одинаковых элементов
+4. Шапка
+5. Подвал
+6. Стили которые не повторяются на других страницах
+
+Мобильная версия начинается с 992пх
+
+*/
+
+@import 'blocks/vars';
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ШРИФТЫ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@import 'blocks/fonts';
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	ОБЩИЕ СТИЛИ ДЛЯ ВСЕГО САЙТА 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+*,
+p,
+h1,h2,h3,h4,h5,h6{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	line-height: normal;
+}
+html{ 
+	overflow-x: hidden;
+	&.fixed{
+		overflow: hidden;
+	}
+}
+body{
+	font-family: 'Geologica', sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	color: var(--color-main);
+    overflow-x: hidden;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	&:hover{
+		text-decoration: none;
+	}
+}
+button{ 
+	display: block;
+    font-family: 'Geologica', sans-serif;
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	&:focus{
+		outline: none;
+	}
+	&:disabled{
+		pointer-events: none;
+		opacity: 0.5;
+	}
+}
+input, textarea{
+    font-family: 'Geologica', sans-serif;
+	outline: none;
+	&:focus-visible{
+		outline: none;
+	}
+	&:disabled{
+		pointer-events: none;
+		opacity: 0.5;
+	}
+}
+
+* ::-webkit-scrollbar {
+    width: 6px; /* ширина всей полосы прокрутки */
+  }
+  * ::-webkit-scrollbar-track {
+    background: var(--color-3); /* цвет зоны отслеживания */
+    border-radius: 20px;
+  }
+  * ::-webkit-scrollbar-thumb {
+    background-color: var(--color-1); /* цвет бегунка */
+    border-radius: 20px; /* округлось бегунка */
+    border: 3px solid transparent;
+  }
+
+.compensate-for-scrollbar{
+    padding-right: 0 !important;
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;     
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFF;
+    border-radius: 8px;
+    background: var(--grab-for-btn, linear-gradient(93deg, #4971FF 0%, #5691C8 100.11%));
+    transition: all .3s;
+    &:hover{
+        background: var(--grab-for-btn, linear-gradient(93deg, #4971FF 0%, #4971FF 100.11%));
+    }
+}
+
+.title{
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--color-4);
+    @media(max-width: 992px){
+        font-size: 24px;
+    }
+}
+
+.swiper-wrapper{
+    align-items: stretch;
+}
+.swiper-slide{
+    height: auto;
+}
+.swiper-pagination{
+    position: static;
+    margin-top: 30px;
+}
+.swiper-pagination-bullet{
+    background: var(--color-1);
+}
+
+.mobile{
+	display: none;
+	@media screen and ( max-width: 992px ){
+		display: block;
+	}
+}
+.desktop{
+	@media screen and ( max-width: 992px ){
+		display: none;
+	}
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	//END ОБЩИЕ СТИЛИ ДЛЯ ВСЕГО САЙТА 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ (нужны там где нет нужды в осмысленном класснейминге)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.color-blue{
+    color: var(--color-1);
+}
+.color-red{
+    color: var(--color-2);
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	//END	ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	СТИЛИ ДЛЯ ОДИНАКОВЫХ ЭЛЕМЕНТОВ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@import 'blocks/templates';
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	//END СТИЛИ ДЛЯ ОДИНАКОВЫХ ЭЛЕМЕНТОВ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+	HEADER 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@import 'blocks/header';
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+	//END HEADER  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+	FOOTER  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@import 'blocks/footer';
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+	//END FOOTER  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+	СТИЛИ КОТОРЫЕ НЕ ПОВТОРЯЮТСЯ НА ДРУГИХ СТРАНИЦАХ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@import 'blocks/home';
+
+@import 'blocks/services';
+
+@import 'blocks/calc';
+
+@import 'blocks/info';
+
+@import 'blocks/advantages';
+
+@import 'blocks/steps';
+
+@import 'blocks/reason';
+
+@import 'blocks/partners';
+
+@import 'blocks/contacts';
