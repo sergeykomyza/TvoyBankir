@@ -211,46 +211,37 @@ const calculator = () => {
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ КАРТА, ОТЛОЖЕННАЯ ЗАГРУЗКА (ЧТОБЫ УЛУЧШИТЬ ПОКАЗАТЕЛИ - PageSpeed Insights)
 const map = () => {
 
-    setTimeout(function() {
-        var headID = document.getElementsByTagName("body")[0];         
-        var newScript = document.createElement('script');
-        newScript.type = 'text/javascript';
-        newScript.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
-        headID.appendChild(newScript);
-    }, 1000);
-    setTimeout(function() {
-            var myMap = new ymaps.Map("map", {
-            center: [55.707740, 37.625406],
-            zoom: 16,
-            controls: ['smallMapDefaultSet']
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
+    setTimeout(() => {
+        const script = document.createElement('script');
 
-        myGeoObject = new ymaps.GeoObject({
-            geometry: {
-                type: "Point"
-            },
-        });
-        myMap.geoObjects
-            .add(myGeoObject)
-            .add(new ymaps.Placemark([55.707740, 37.625406], {
-                balloonContent: '<strong>г. Москва, Гамсоновский переулок, д. 2, стр. 1, БЦ «ЦЕНТР-Т» (м. Тульская)</strong>',
-                iconCaption: 'БЦ «ЦЕНТР-Т» (м. Тульская)'
-            }, {
-                preset: 'islands#blueCircleDotIconWithCaption',
-                iconCaptionMaxWidth: '200'
-            }));
+        script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
 
-        myMap.setType('yandex#publicMap');
+        script.onload = () => {
+            ymaps.ready(initMap);
+        };
 
-        myMap.behaviors.disable('scrollZoom');
-        //на мобильных устройствах... (проверяем по userAgent браузера)
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            //... отключаем перетаскивание карты
-            myMap.behaviors.disable('drag');
-        }
+        document.body.appendChild(script);
     }, 2000);
+
+    function initMap() {
+        const myMap = new ymaps.Map('map', {
+            center: [55.707740, 37.625406],
+            zoom: 16
+        });
+
+        const myPlacemark = new ymaps.Placemark(
+            [55.707740, 37.625406],
+            {
+                hintContent: 'БЦ «ЦЕНТР-Т»',
+                balloonContent: '<strong>г. Москва, Гамсоновский переулок, д. 2, стр. 1, БЦ «ЦЕНТР-Т» (м. Тульская)</strong>'
+            },
+            {
+                iconLayout: 'default#image',
+            }
+        );
+
+        myMap.geoObjects.add(myPlacemark);
+    }
 
 }
 
@@ -258,7 +249,7 @@ const map = () => {
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 headerLogic()
-inputMask()
+// inputMask()
 sliders()
 calculator()
 map()
